@@ -38,8 +38,21 @@ int main()
         cout << "Time: " << period << endl;
         
         for (int lane = 0; lane < LANES; lane++) {
+            cout << "Lane: " << lane + 1 << " ";
+            int prob = rand() % 100 + 1; //produces rand prob
+
             if (lanes[lane].empty()) {
-                cout << "\tEmpty" << endl;
+                if (prob <= EMPTY) {
+                    cout << "Joined: ";
+                    Car nextCar; //create new car
+                    lanes[lane].push_back(nextCar); //put in back of deque
+                    nextCar.print();
+                    cout << endl;
+
+                }
+            }
+            else {
+
             }
         }
     }
