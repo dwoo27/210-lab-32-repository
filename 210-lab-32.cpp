@@ -58,8 +58,6 @@ int main()
 }
 
 void displayQueue(deque<Car>& line) {
-    cout << "Queue:" << endl;
-
     if (line.empty()) {
         cout << "\tEmpty" << endl;
     }
@@ -73,8 +71,8 @@ void displayQueue(deque<Car>& line) {
 }
 
 void displayPlaza(deque<Car> lanes[]){
-    for (int lane = 1; lane <= LANES; lane++) {
-        cout << "Lane " << lane;
+    for (int lane = 0; lane < LANES; lane++) {
+        cout << "Lane " << lane + 1 << " Queue:" << endl;
         displayQueue(lanes[lane]);
     }
 }
