@@ -66,9 +66,25 @@ int main()
                     cout << endl;
                 }
                 else { //prob switch 15%, prob is 86+
+                    cout << "Switched: ";
 
+                    int nextLane = rand() % LANES; //no +1 because we need indexes 0-3
+                    while (nextLane == lane) { //keep running to ensure different lane
+                        nextLane = rand() % LANES;
+                    }
+
+                    Car switching = lanes[lane].back(); //get back car from lane
+                    lanes[lane].pop_back(); //car leaves original lane
+                    lanes[nextLane].push_back(switching); //moves to new lane
+
+                    switching.print();
+                    cout << endl;
                 }
-            }
+            }   
+
+            displayPlaza(lanes);
+            cout << endl;
+
         }
     }
     /* int period = 1; //counter for periods
