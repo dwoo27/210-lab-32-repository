@@ -20,6 +20,30 @@ int main()
         line.push_back(nextCar);
     }
 
+    int period = 1;
+
+    while (!line.empty()) {
+        int prob = rand() % 100 + 1;
+
+        cout << "Time: " << period << " Operation: ";
+
+        if (prob <= 55) {
+            cout << "Car paid: ";
+            line.front().print();
+            cout << endl;
+            line.pop_front();
+        }
+        if (prob <= 45) {
+            cout << "Joined lane: ";
+            Car nextCar;
+            line.push_back(nextCar);
+            nextCar.print();
+            cout << endl;
+        }
+
+        displayQueue(line);
+        cout << endl;
+    }
         
 }
 
