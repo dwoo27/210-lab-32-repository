@@ -7,6 +7,7 @@ using namespace std;
 
 const int INTIAL_SIZE = 2;
 const int PERIODS = 20;
+const int LANES = 4;
 
 void displayQueue(deque<Car>&);
 
@@ -14,9 +15,27 @@ int main()
 {
     srand(time(0));
 
-    deque<Car> line; //create std::deque
+    deque<Car> lanes[LANES]; //create array of deques
+    Car c1;
+    Car c2;
+    Car c3;
 
-    for (int i = 0; i < INTIAL_SIZE; i++) { //populate with 2 cars initially and pushback into deque
+    lanes[0].push_back(c1);
+    lanes[1].push_back(c2);
+    lanes[2].push_back(c3);
+
+    cout << lanes[0].size() << endl;
+    cout << lanes[1].size() << endl;
+    cout << lanes[2].size() << endl;
+
+    lanes[0].front().print();
+    lanes[1].back().print();
+
+    lanes[0].pop_front();
+
+
+
+   /* for (int i = 0; i < INTIAL_SIZE; i++) { //populate with 2 cars initially and pushback into deque
         Car nextCar;
         line.push_back(nextCar);
     }
@@ -49,7 +68,7 @@ int main()
         displayQueue(line);
         cout << endl;
         period++;
-    }
+    } */
         
 }
 
