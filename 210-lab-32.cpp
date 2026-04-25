@@ -9,6 +9,11 @@ const int INTIAL_SIZE = 2;
 const int PERIODS = 20;
 const int LANES = 4;
 
+const int PAID = 46;
+const int JOIN = 39;
+const int SWITCH = 15;
+const int EMPTY = 50;
+
 void displayQueue(deque<Car>&);
 void displayPlaza(deque<Car>[]);
 
@@ -29,6 +34,15 @@ int main()
     displayPlaza(lanes);
     cout << endl;
 
+    for (int period = 1; period <= PERIODS; period++) {
+        cout << "Time: " << period << endl;
+        
+        for (int lane = 0; lane < LANES; lane++) {
+            if (lanes[lane].empty()) {
+                cout << "\tEmpty" << endl;
+            }
+        }
+    }
     /* int period = 1; //counter for periods
 
     while (!line.empty()) { //run while line is not empty
