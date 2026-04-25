@@ -52,7 +52,22 @@ int main()
                 }
             }
             else {
+                if (prob <= PAID) { //prob paid 46%, prob is 1-46
+                    cout << "Paid: ";
+                    lanes[lane].front().print(); //peek front and print
+                    lanes[lane].pop_front(); //remove from front
+                    cout << endl;
+                }
+                else if (prob <= PAID + JOIN) { //prob join 39%, prob is 47-85
+                    cout << "Joined: ";
+                    Car nextCar; //create new car
+                    lanes[lane].push_back(nextCar); //put in back of deque
+                    nextCar.print();
+                    cout << endl;
+                }
+                else { //prob switch 15%, prob is 86+
 
+                }
             }
         }
     }
