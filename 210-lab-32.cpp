@@ -31,18 +31,17 @@ int main()
             cout << "Car paid: ";
             line.front().print();
             line.pop_front();
-         //   cout << endl;
+            cout << endl;
         }
-        if (prob <= 45) {
+        else{
             cout << "Joined lane: ";
             Car nextCar;
             line.push_back(nextCar);
             nextCar.print();
             cout << endl;
         }
-        cout << endl;
         displayQueue(line);
-       // cout << endl;
+        cout << endl;
         period++;
     }
         
