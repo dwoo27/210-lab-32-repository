@@ -30,8 +30,8 @@ int main()
         if (prob <= 55) {
             cout << "Car paid: ";
             line.front().print();
-            cout << endl;
             line.pop_front();
+         //   cout << endl;
         }
         if (prob <= 45) {
             cout << "Joined lane: ";
@@ -40,9 +40,10 @@ int main()
             nextCar.print();
             cout << endl;
         }
-
-        displayQueue(line);
         cout << endl;
+        displayQueue(line);
+       // cout << endl;
+        period++;
     }
         
 }
