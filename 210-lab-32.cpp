@@ -6,6 +6,7 @@
 using namespace std;
 
 const int INTIAL_SIZE = 2;
+const int PERIODS = 20;
 
 void displayQueue(deque<Car>&);
 
