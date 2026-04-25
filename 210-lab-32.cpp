@@ -10,41 +10,26 @@ const int PERIODS = 20;
 const int LANES = 4;
 
 void displayQueue(deque<Car>&);
+void displayPlaza(deque<Car>[]);
 
 int main()
 {
     srand(time(0));
 
     deque<Car> lanes[LANES]; //create array of deques
-    Car c1;
-    Car c2;
-    Car c3;
-
-    lanes[0].push_back(c1);
-    lanes[1].push_back(c2);
-    lanes[2].push_back(c3);
-
-    cout << lanes[0].size() << endl;
-    cout << lanes[1].size() << endl;
-    cout << lanes[2].size() << endl;
-
-    lanes[0].front().print();
-    lanes[1].back().print();
-
-    lanes[0].pop_front();
-
-
-
-   /* for (int i = 0; i < INTIAL_SIZE; i++) { //populate with 2 cars initially and pushback into deque
-        Car nextCar;
-        line.push_back(nextCar);
+    for (int lane = 0; lane < LANES; lane++) {
+        for (int i = 0; i < INTIAL_SIZE; i++) { //populate each lane with 2 cars initially and pushback into deque
+            Car nextCar;
+            lanes[lane].push_back(nextCar);
+        }
     }
+    
 
-    cout << "Intial" << endl;
-    displayQueue(line);
+    cout << "Initial" << endl;
+    displayPlaza(lanes);
     cout << endl;
 
-    int period = 1; //counter for periods
+    /* int period = 1; //counter for periods
 
     while (!line.empty()) { //run while line is not empty
         int prob = rand() % 100 + 1; //produces rand prob
@@ -84,5 +69,12 @@ void displayQueue(deque<Car>& line) {
             car.print();
             cout << endl;
         }
+    }
+}
+
+void displayPlaza(deque<Car> lanes[]){
+    for (int lane = 1; lane <= LANES; lane++) {
+        cout << "Lane " << lane;
+        displayQueue(lanes[lane]);
     }
 }
